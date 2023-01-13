@@ -19,6 +19,22 @@ x = 7
 print(5 < x < 10)
 
 # False
-print(bool(0))
+a = []
+print(bool(a))
+a.append(5)
+print(bool(set()))
+print(bool(dict()))
+print(bool("ace"))
 
-print(ord("a"))
+# in이 있는 다중비교
+letter = 'o'
+if letter == 'a' or letter == 'e' or letter == 'i'\
+    or letter == 'o' or letter == 'u':
+    print(letter, 'is a vowel')
+else: print(letter, 'is not a vowel')
+
+vowels = 'aeiou'
+letter = 'u'
+if letter not in vowels:
+    print('모음 없음!')
+else: print('모음 있음!')
