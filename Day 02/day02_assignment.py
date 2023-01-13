@@ -15,3 +15,20 @@ else:
     print("just right")
 
 # 4.2
+
+import random
+small = random.choice([True,False])
+green = random.choice([True,False])
+
+print('small =',small,', green =', green)
+
+if small:
+    if green:
+        print("pea")
+    else:
+        print("cherry")
+else:
+    if green:
+        print("watermelon")
+    else:
+        print("pumpkin")
