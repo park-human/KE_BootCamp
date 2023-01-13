@@ -25,3 +25,6 @@ if diff >= 0:
     print(tweets)
 else:
     print(f'글자 수 {abs(diff)}자수 초과')
+
+import random
+print(random.randint(1,10))
