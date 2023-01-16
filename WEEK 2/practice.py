@@ -21,7 +21,7 @@ end = int(input("end number : "))
 if end < start:
 	start, end = end, start
 
-for i in range(start, end+1): # i는 start부터 end+1까지이다.
+for i in range(start, end+1): # i는 start부터 end+1까지
 	if i <= 1:
 		continue                  # 1은 소수가 아니므로 1을 입력시 무시한다. (i +1)
 	for k in range(2, i):
@@ -30,8 +30,3 @@ for i in range(start, end+1): # i는 start부터 end+1까지이다.
 	else:
 		print(i, end=' ')
 print()
-print(i)
-
-# ex. 6-1
-for k in [3, 2, 1, 0]:
-	print(k)
