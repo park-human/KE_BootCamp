@@ -134,8 +134,8 @@ while True:
 
 word = 'thudx'
 for letter in word:
-	if letter == 'x':
-		print("Eek! An 'x'!")
-		break
+    if letter == 'x':
+        print("Eek! An 'x'!")
+        break
 else:
-		print("No 'x' in there.")
+        print("No 'x' in there.")
