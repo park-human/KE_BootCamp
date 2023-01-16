@@ -63,19 +63,6 @@
 #words = ('roast beef', 'ham', 'head', 'clam')
 #print(poem % words)
 
-# 연습문제 5.4
-
-#print('''Dear {situation} {name},
-
-#Thank you for your letter. We are sorry that our {product} {verbed} in your {room}. Please note that it should never be used in a {room}, especially near any {animals}.
-
-#Send us your receipt and {amount} for shipping and handling. We will send you another {product} that, in our tests, is {percent}% less likely to have {verbed}.
-
-#Thank you for your not support.
-#Sincerely,
-#{spokesman}
-#{job_title}'''.format(situation='customer',name='Hayeon',product='computer',verbed='crashed',room='bathtub',animals='cats',amount='$100',percent='70',spokesman='Cassidy',job_title='Manager'))
-
 #while
 
 #while True:
