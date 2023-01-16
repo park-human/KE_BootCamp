@@ -28,50 +28,114 @@
 #print('Captain Trio:',pirates_string)
 
 # 연습문제 5.1
-song = """When an eel grabs your arm,
-And it causes great harm,
-That's - a moray!"""
-song = song.replace(' m'," M")
-print(song)
-print()
+#song = """When an eel grabs your arm,
+#And it causes great harm,
+#That's - a moray!"""
+#song = song.replace(' m'," M")
+#print(song)
+#print()
 
 # 연습문제 5.2
 
-questions = [
-"We don't serve strings around here. Are you a string?",
-"What is said on Father's Day in the forest?",
-"What makes the sound 'Sis! Boom! Bah!'?"
-]
-answers = [
-"An exploding sheep.",
-"No, I'm a frayed knot.",
-"'Pop!' goes the weasel."
-]
+#questions = [
+#"We don't serve strings around here. Are you a string?",
+#"What is said on Father's Day in the forest?",
+#"What makes the sound 'Sis! Boom! Bah!'?"
+#]
+#answers = [
+#"An exploding sheep.",
+#"No, I'm a frayed knot.",
+#"'Pop!' goes the weasel."
+#]
 
-q_a = ((0,1),(1,2),(2,0))
-for q, a in q_a:
-    print('Q: ',questions[q])
-    print('A: ',answers[a])
-    print()
+#q_a = ((0,1),(1,2),(2,0))
+#for q, a in q_a:
+#    print('Q: ',questions[q])
+#    print('A: ',answers[a])
+#    print()
 
 # 연습문제 5.3
 
-poem = """My kitty cat likes %s,
-My kitty cat likes %s,
-My kitty cat fell on his %s
-And now thinks he's a %s."""
-words = ('roast beef', 'ham', 'head', 'clam')
-print(poem % words)
+#poem = """My kitty cat likes %s,
+#My kitty cat likes %s,
+#My kitty cat fell on his %s
+#And now thinks he's a %s."""
+#words = ('roast beef', 'ham', 'head', 'clam')
+#print(poem % words)
 
 # 연습문제 5.4
 
-print('''Dear {situation} {name},
+#print('''Dear {situation} {name},
 
-Thank you for your letter. We are sorry that our {product} {verbed} in your {room}. Please note that it should never be used in a {room}, especially near any {animals}.
+#Thank you for your letter. We are sorry that our {product} {verbed} in your {room}. Please note that it should never be used in a {room}, especially near any {animals}.
 
-Send us your receipt and {amount} for shipping and handling. We will send you another {product} that, in our tests, is {percent}% less likely to have {verbed}.
+#Send us your receipt and {amount} for shipping and handling. We will send you another {product} that, in our tests, is {percent}% less likely to have {verbed}.
 
-Thank you for your not support.
-Sincerely,
-{spokesman}
-{job_title}'''.format(situation='customer',name='Hayeon',product='computer',verbed='crashed',room='bathtub',animals='cats',amount='$100',percent='70',spokesman='Cassidy',job_title='Manager'))
+#Thank you for your not support.
+#Sincerely,
+#{spokesman}
+#{job_title}'''.format(situation='customer',name='Hayeon',product='computer',verbed='crashed',room='bathtub',animals='cats',amount='$100',percent='70',spokesman='Cassidy',job_title='Manager'))
+
+#while
+
+#while True:
+#    dan = int(input('Dan : '))
+
+    #if 1 < dan < 10:
+#    if 2 <= dan <= 9:
+#        i = 1
+#        while i < 10:
+#            print('{0} * {1} = {2}'.format(dan, i, dan*i))
+#            i = i+1
+#        break
+#    else:
+#        print('2에서 9 사이의 값을 입력하세요.')
+
+# break
+#while True:
+#    stuff = input("String to capitalize [type q to quit]: ")
+#    if stuff == "q":
+#        break
+#    print(stuff.capitalize())
+
+# continue
+#while True:
+#    value = input("Integer, please [q to quit]: ")
+#    if value == 'q': #quit
+#        break
+#    number = int(value)
+#    if number % 2 == 0: #짝수
+#        continue
+#    print(number, '의 제곱은', number*number,'입니다.')
+
+# else
+numbers = [1,3,5]
+position = 0
+while position < len(numbers):
+        number = numbers[position]
+        if number % 2 == 0:
+             print('짝수 찾음', number)
+             break
+        position += 1 # += : 오른쪽 값을 왼쪽 값에 더하고 재정의
+else : #break 문이 호출되지 않은 경우
+             print('짝수 없음')
+
+#for
+while True:
+    dan = int(input('Dan (0 to quit): '))
+
+    if dan == 0: #exit
+        break
+    if 1 < dan < 10:
+        for i in range(1, 10):
+            print('{0} * {1} = {2}'.format(dan, i, dan * i))
+    else:
+        print('2에서 9 사이의 값을 입력하세요.')
+
+word = 'thudx'
+for letter in word:
+	if letter == 'x':
+		print("Eek! An 'x'!")
+		break
+else:
+		print("No 'x' in there.")
