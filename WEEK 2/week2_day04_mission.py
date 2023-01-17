@@ -35,3 +35,38 @@ for first, second in rhymes:
     print(f"{start2}{second}")
 
 # 8장
+
+#8.1
+e2f = {'dog':'chein', 'cat':'chat','walrus':'morse'}
+#8.2
+print(e2f['walrus'])
+#8.3
+f2e = {v:k for k, v in e2f.items()}
+#8.4
+print(f2e['chein'])
+#8.5
+for value in f2e.values():
+    print(value)
+#8.6
+life = {
+    'animals':{
+        'cats':[
+            'Henri',
+            'Grumpy',
+            'Lucy'
+        ],
+        'octopi':{},
+        'emus':{}
+    },
+    'plants':{},
+    'other':{}
+}
+#8.7
+print(life.keys())
+#8.8
+print(life['animals'].keys())
+#8.9
+print(life['animals']['cats'])
+#8.10
+squares = {key: key ** 2 for key in range(10)}
+print(squares)

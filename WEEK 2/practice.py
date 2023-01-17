@@ -39,3 +39,5 @@ print(things[0].upper())
 # ex 7-7
 print(f'Delete the {things.pop()} from things, get Nobel Prize.')
 print(things)
+
+#
