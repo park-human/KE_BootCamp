@@ -15,18 +15,27 @@
 #    print(k, end=' ') # 줄바꿈 대신에 띄어쓰기
 
 # 두 수 사이의 소수를 출력한다
-start = int(input("start number : "))
-end = int(input("end number : "))
+# start = int(input("start number : "))
+# end = int(input("end number : "))
+#
+# if end < start:
+# 	start, end = end, start
+#
+# for i in range(start, end+1): # i는 start부터 end+1까지
+# 	if i <= 1:
+# 		continue                  # 1은 소수가 아니므로 1을 입력시 무시한다. (i +1)
+# 	for k in range(2, i):
+# 		if i % k == 0:            # i를 k로 나눴을 때 0이 나오면 소수가 아니다
+# 			break
+# 	else:
+# 		print(i, end=' ')
+# print()
 
-if end < start:
-	start, end = end, start
+# ex 7-4 ~ 7-6
+things = ['mozzarella', 'cinderella', 'salmonella']
+print(things[1].capitalize())
+print(things[0].upper())
 
-for i in range(start, end+1): # i는 start부터 end+1까지
-	if i <= 1:
-		continue                  # 1은 소수가 아니므로 1을 입력시 무시한다. (i +1)
-	for k in range(2, i):
-		if i % k == 0:            # i를 k로 나눴을 때 0이 나오면 소수가 아니다
-			break
-	else:
-		print(i, end=' ')
-print()
+# ex 7-7
+print(f'Delete the {things.pop()} from things, get Nobel Prize.')
+print(things)
