@@ -100,12 +100,14 @@
 # 안주 추천 프로그램
 import random
 
-alcohol_foods = {
-    '맥주' : '치킨',
-    '소주' : '골뱅이소면',
-    '와인' : '치즈',
-    '고량주' : '짬뽕'
-}
+# alcohol_foods = {
+#     '맥주' : '치킨',
+#     '소주' : '골뱅이소면',
+#     '와인' : '치즈',
+#     '고량주' : '짬뽕'
+# }
+1
+alcohol_foods = dict(맥주='치킨', 소주='골뱅이소면', 와인='치즈', 고량주='짬뽕')
 alcohol_list = list(alcohol_foods) # extract keys
 food_list = [food for food in alcohol_foods.values()] # extract values and append list
 
@@ -130,3 +132,6 @@ while True:
         print(f'{random.choice(alcohol_list)}에 어울리는 안주는 {random.choice(food_list)}입니다.')
     else:
         print('메뉴에서 골라주세요.')
+
+for food in enumerate(food_list): #tuple return
+    print(food[1])
