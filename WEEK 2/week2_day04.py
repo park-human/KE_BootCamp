@@ -97,6 +97,9 @@
 #print(f'이름은 {students["name"]}, 나이는 {students["age"]}세', end=" ")
 #print(f'시력은 좌: {students["eyes"][0]}, 우: {students["eyes"][1]}')
 
+# 안주 추천 프로그램
+import random
+
 alcohol_foods = {
     '맥주' : '치킨',
     '소주' : '골뱅이소면',
@@ -104,9 +107,11 @@ alcohol_foods = {
     '고량주' : '짬뽕'
 }
 alcohol_list = list(alcohol_foods) # extract keys
+food_list = [food for food in alcohol_foods.values()] # extract values and append list
+
 while True:
-    alcohol = input(f'술을 선택하세요. 1){alcohol_list[0]} 2){alcohol_list[1]} 3){alcohol_list[2]} 4){alcohol_list[3]} 5) 계산 : ')
-    if alcohol == '5':
+    alcohol = input(f'술을 선택하세요. 1){alcohol_list[0]} 2){alcohol_list[1]} 3){alcohol_list[2]} 4){alcohol_list[3]} 5) 아무거나 6) 계산 : ')
+    if alcohol == '6':
         print('다음에 또 오세요.')
         break
 
@@ -119,10 +124,9 @@ while True:
     # elif alcohol == '4' :
     #     print(f'{alcohol_list[3]}에 어울리는 안주는 {alcohol_foods[alcohol_list[3]]}입니다.')
 
-    elif '1' <= alcohol <= '5':
+    elif '1' <= alcohol <= '4':
         print(f'{alcohol_list[int(alcohol) - 1]}에 어울리는 안주는 {alcohol_foods[alcohol_list[int(alcohol) - 1]]}입니다.')
-    elif alcohol == '6':
-        import random
-        print(random.choice({alcohol_foods[1]}))
+    elif alcohol == '5':
+        print(f'{random.choice(alcohol_list)}에 어울리는 안주는 {random.choice(food_list)}입니다.')
     else:
         print('메뉴에서 골라주세요.')
