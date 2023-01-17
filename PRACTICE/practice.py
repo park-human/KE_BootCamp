@@ -5,11 +5,16 @@ end = int(input("end number : "))
 if end < start:
     start, end = end, start
 
-k = 1
-while k <= end:
+i = start
+while i < end+1:
     if i <= 1:
+        i += 1
         continue
-    if i % k == 0:
-         break
+    k = 2
+    while k < i:
+        if i % k == 0:
+            break
+        k +=1
     else:
         print(i, end=' ')
+    i +=1
