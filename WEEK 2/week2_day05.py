@@ -117,3 +117,15 @@ def run_func(f,arg1,arg2):
     """
     f(arg1,arg2)
 run_func(substract,7,2)
+
+a = (5, 7, -1)
+print(sum(a))
+
+def knights(saying):
+    def inner2():
+        return "We are the knights who say:'%s'" % saying
+    return inner2
+a = knights('Duck')
+b = knights('Hello')
+print(a())
+print(b())
