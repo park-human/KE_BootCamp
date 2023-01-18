@@ -50,12 +50,13 @@ import random
 # 놀이공원 입장객의 유형(성인/아동)과 총 금액 계산하기 (단, 입장객의 나이는 1~60 사이 랜덤)
 
 import random
-def calculate_fee(args)-> list:
+def calculate_fee(args)-> dict:
     """
     놀이공원 요금 계산 프로그램
     :param args: ages in list
-    :return: 전체 인원 수, 어른 수, 아이 수, 지불할 총 입장료
+    :return: {'no_of_visitor':전체 인원 수, 'no_of_adults':어른 수, 'no_of_kids':아이 수, 'total_amount':지불할 총 입장료}
     """
+
     total = 0
     adults = 0
     kids = 0
@@ -66,12 +67,15 @@ def calculate_fee(args)-> list:
         else:
             total = total + 3000
             kids = kids + 1
-    return [len(args), adults, kids, total]
+    return {'no_of_visitor': len(args), 'no_of_adults':adults, 'no_of_kids':kids, 'total_fee':total}
 
 no_of_visitor = int(input('총 인원수를 입력하세요. : '))
 ages = [random.randint(1,60) for age in range(no_of_visitor)]
 results = calculate_fee(ages)
-print(f'총 인원 수: {results[0]}분. 성인 {results[1]}명, 아동 {results[2]}명, 총 요금은 {results[3]}원입니다.')
+print(f"총 인원 수: {results['no_of_visitor']}분. 성인 {results['no_of_adults']}명, 아동 {results['no_of_kids']}명, 총 요금은 {results['total_fee']}원입니다.")
+
+# print(calculate_fee.__doc_)
+#help(calculate_fee)
 
 # def print_more(required1, required2, *args):
 # 	print('Need this one:', required1)
