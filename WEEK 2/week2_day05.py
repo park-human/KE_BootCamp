@@ -84,48 +84,64 @@ import random
 #
 # print_more('cap','gloves','scarf','monocle','mustache wax')
 
-def inha():
-    print(42)
-    """
-    숫자 출력
-    """
+# def inha():
+#     print(42)
+#     """
+#     숫자 출력
+#     """
+#
+# def call_func(f):
+#     """
+#     매개변수로 함수를 넘겨받아 실행
+#     f: 매개변수가 함수
+#     """
+#     f()
+#
+# call_func(inha)
+# print(type(call_func))
+#
+# def add_args(arg1,arg2):
+#     print(arg1 + arg2)
+# def run_something_with_args(func, arg1, arg2):
+#     func(arg1, arg2)
+# run_something_with_args(add_args,5,9)
+#
+# def substract(n1,n2):
+#     print(n1 - n2)
+# def run_func(f,arg1,arg2):
+#     """
+#     함수를 매개 변수로 받아 함수 안에서 해당 함수를 실행
+#     f: 첫 번째 인수는 함수
+#     arg1: 정수 값
+#     arg2: 정수 값
+#     """
+#     f(arg1,arg2)
+# run_func(substract,7,2)
+#
+# a = (5, 7, -1)
+# print(sum(a))
+#
+# def knights(saying):
+#     def inner2():
+#         return "We are the knights who say:'%s'" % saying
+#     return inner2
+# a = knights('Duck')
+# b = knights('Hello')
+# print(a())
+# print(b())
 
-def call_func(f):
-    """
-    매개변수로 함수를 넘겨받아 실행
-    f: 매개변수가 함수
-    """
-    f()
+# Closures
+def calculate():
+    x = 1
+    y = 2
+    temp = 0
+    def add_sub(n):
+        nonlocal temp
+        # x = 11 # local variable
+        temp = temp + x + n - y
+        return temp
+    return add_sub
 
-call_func(inha)
-print(type(call_func))
-
-def add_args(arg1,arg2):
-    print(arg1 + arg2)
-def run_something_with_args(func, arg1, arg2):
-    func(arg1, arg2)
-run_something_with_args(add_args,5,9)
-
-def substract(n1,n2):
-    print(n1 - n2)
-def run_func(f,arg1,arg2):
-    """
-    함수를 매개 변수로 받아 함수 안에서 해당 함수를 실행
-    f: 첫 번째 인수는 함수
-    arg1: 정수 값
-    arg2: 정수 값
-    """
-    f(arg1,arg2)
-run_func(substract,7,2)
-
-a = (5, 7, -1)
-print(sum(a))
-
-def knights(saying):
-    def inner2():
-        return "We are the knights who say:'%s'" % saying
-    return inner2
-a = knights('Duck')
-b = knights('Hello')
-print(a())
-print(b())
+c1 = calculate()
+for i in range(5):
+    print(c1(i))
