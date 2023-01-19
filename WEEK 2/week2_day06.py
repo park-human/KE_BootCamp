@@ -216,11 +216,16 @@ class Pokemon:
         for skill in self.skills:
             print(skill)
 
+class Pikachu(Pokemon): #inheritance
+    pass
+
+pi1 = Pikachu('피카츄', '한지우', '전기', '100만 볼트')
+pi1.info()
 p1 = Pokemon('피카츄', '한지우','번개', '100만 볼트/전기자석파/전기쇼크')
 p2 = Pokemon('꼬부기', '오바람','물', '고속스핀/하이드로펌프/메가톤펀치')
 
-p1.info()
-p2.info()
+#p1.info()
+#p2.info()
 # print(f'{p1.owner}의 포켓몬은 {p1.name}입니다.')
 # print(f'{p2.owner}의 포켓몬은 {p2.name}입니다.')
 #print(p1, p2) # 서로 다른 두 객체
