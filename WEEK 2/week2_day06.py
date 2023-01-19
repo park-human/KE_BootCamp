@@ -159,37 +159,68 @@
 #     print('종료')
 
 # 9.1
-def good():
-    return ['Harry', 'Ron', 'Hermione']
-
+# def good():
+#     return ['Harry', 'Ron', 'Hermione']
+#
 # 9.2
-cnts = 0
-def get_odds():
-    for num in range(10):
-        if num % 2:
-            yield num
-
-odds = get_odds()
-for i in odds:
-    cnts += 1
-    if cnts == 3:
-        print(i)
-
+# cnts = 0
+# def get_odds():
+#     for num in range(10):
+#         if num % 2:
+#             yield num
+#
+# odds = get_odds()
+# for i in odds:
+#     cnts += 1
+#     if cnts == 3:
+#         print(i)
+#
 # 9.3
-def test():
-
-    print('start')
-    print('end')
-
-groups = {
-    '빅뱅':['GD','태양','탑','대성','승리'],
-    '마마무':['문별','솔라','휘인','화사']
-}
-
+# def test():
+#
+#     print('start')
+#     print('end')
+#
+# groups = {
+#     '빅뱅':['GD','태양','탑','대성','승리'],
+#     '마마무':['문별','솔라','휘인','화사']
+# }
+#
 # 조건 : 빅뱅의 탈퇴 멤버 '승리'는 조건문을 사용하여 필터링한다.
+#
+# for group, members in groups.items():
+#     print('f{group}의 멤버')
+#     for member in members:
+#         if member !="승리":
+#             print(member)
 
-for group, members in groups.items():
-    print('f{group}의 멤버')
-    for member in members:
-        if member !="승리":
-            print(member)
+# class
+# class Pokemon:
+#     def __init__(self):
+#         print("포켓몬 객체 생성됨")
+# p1 = Pokemon()
+# p2 = Pokemon()
+# print(p1, p2) # 서로 다른 두 객체
+
+class Pokemon:
+    def __init__(self, name, owner, type, skills):
+        self.name = name
+        self.owner = owner
+        self.type = type
+        self.skills = skills.split('/')
+        #print(f"포켓몬 '{name}' 생성됨")
+
+    def info(self):
+        print(f"{self.owner}의 포켓몬은 {self.name}는 {self.type}속성입니다.")
+        #print(f"{self.name}의 스킬: {self.skills}")
+        for skill in self.skills:
+            print(skill)
+
+p1 = Pokemon('피카츄', '한지우','번개', '100만 볼트/전기자석파/전기쇼크')
+p2 = Pokemon('꼬부기', '오바람','물', '고속스핀/하이드로펌프/메가톤펀치')
+
+p1.info()
+p2.info()
+# print(f'{p1.owner}의 포켓몬은 {p1.name}입니다.')
+# print(f'{p2.owner}의 포켓몬은 {p2.name}입니다.')
+#print(p1, p2) # 서로 다른 두 객체
