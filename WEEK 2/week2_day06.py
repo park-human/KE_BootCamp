@@ -141,19 +141,55 @@
 # except:
 #     print('0으로는 나눌 수 없습니다.')
 
-try:
-    expr = input('분자와 분모를 입력하세요 : ').split()
-    print(int(expr[0]) / int(expr[1]))
+# try:
+#     expr = input('분자와 분모를 입력하세요 : ').split()
+#     print(int(expr[0]) / int(expr[1]))
+#
+# except ValueError as err:
+#     print(f'숫자를 입력해주세요. ({err})')
+# except ZeroDivisionError as err:
+#     print(f'분모에 0이 올 수 없습니다.({err})')
+# except IndexError as err:
+#     print(f'입력 값의 범위에 문제가 있습니다.({err})')
+# except Exception as other:
+#     print(f'예외 발생 : {other}')
+# else: # 예외가 발생하지 않았을 때
+#     print('프로그램 정상', end=' ')
+# finally: # 예외 발생 여부와 상과없이 무조건 실행
+#     print('종료')
 
-except ValueError as err:
-    print(f'숫자를 입력해주세요. ({err})')
-except ZeroDivisionError as err:
-    print(f'분모에 0이 올 수 없습니다.({err})')
-except IndexError as err:
-    print(f'입력 값의 범위에 문제가 있습니다.({err})')
-except Exception as other:
-    print(f'예외 발생 : {other}')
-else: # 예외가 발생하지 않았을 때
-    print('프로그램 정상', end=' ')
-finally: # 예외 발생 여부와 상과없이 무조건 실행
-    print('종료')
+# 9.1
+def good():
+    return ['Harry', 'Ron', 'Hermione']
+
+# 9.2
+cnts = 0
+def get_odds():
+    for num in range(10):
+        if num % 2:
+            yield num
+
+odds = get_odds()
+for i in odds:
+    cnts += 1
+    if cnts == 3:
+        print(i)
+
+# 9.3
+def test():
+
+    print('start')
+    print('end')
+
+groups = {
+    '빅뱅':['GD','태양','탑','대성','승리'],
+    '마마무':['문별','솔라','휘인','화사']
+}
+
+# 조건 : 빅뱅의 탈퇴 멤버 '승리'는 조건문을 사용하여 필터링한다.
+
+for group, members in groups.items():
+    print('f{group}의 멤버')
+    for member in members:
+        if member !="승리":
+            print(member)
