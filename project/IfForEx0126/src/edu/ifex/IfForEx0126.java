@@ -55,6 +55,7 @@ public class IfForEx0126 {
 			System.out.printf("학점 : D (점수: %d점) \n", score);
 		else
 			System.out.printf("학점 : F (점수: %d점) \n", score);
+		// 처리해야하는 조건문이 1개일 경우 중괄호 생략 가능
 
 	}
 
