@@ -6,14 +6,12 @@ public class assignment_0126 {
 
 	public static void main(String[] args) {
 
+		// 2일차 1번 문제
+
 		Scanner sc = new Scanner(System.in); // Scanner 객체 생성
 
-		String name = null;
-		String major = null;
-		int eng = 0;
-		int phy = 0;
-		int cal = 0;
-		String address = null;
+		String name, major, address = null;
+		int eng, phy, cal = 0;
 
 		System.out.print("이름을 입력하세요 \n");
 		name = sc.nextLine();
@@ -39,6 +37,8 @@ public class assignment_0126 {
 		System.out.printf("물리학 = %d, ", phy);
 		System.out.printf("미적분학 = %d \n", cal);
 		System.out.printf("주소 = %s", address);
+
+		// 2일차 2번 문제
 	}
 
 }

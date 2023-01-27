@@ -16,12 +16,15 @@ public class IfForEx0126 {
 			System.out.printf("a는 0이다. \n");
 		}
 
-		// 학점 파별 문제
+		// 학점 판별 문제
 		Scanner sc = new Scanner(System.in);
 		System.out.print("JAVA 점수(0~100) 입력 : ");
 		int score = sc.nextInt();
 
 		if (90 <= score && score <= 100) {
+			if (score >= 95) {
+				System.out.println("최우수학생");
+			}
 			System.out.printf("학점 : A (점수: %d점) \n", score);
 		} else if (80 <= score && score <= 89) {
 			System.out.printf("학점 : B (점수: %d점) \n", score);
