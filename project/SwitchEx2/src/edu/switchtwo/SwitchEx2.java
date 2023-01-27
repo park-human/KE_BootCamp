@@ -10,7 +10,24 @@ public class SwitchEx2 {
 		whoIsIt("고등어");
 		whoIsIt("연어");
 		whoIsIt("곰팡이");
+
+		String tmp = null;
+		tmp = fone(1);
+		System.out.println("tmp = " + tmp);
+		tmp = fone(2);
+		System.out.println("tmp = " + tmp);
+		tmp = fone(3);
+		System.out.println("tmp = " + tmp);
 	} // end of main()
+
+	static String fone(int n) {
+		return switch (n) {
+		case 1 -> "한개";
+		case 2 -> "두개";
+		default -> "많이";
+		};
+
+	}
 
 	static void whoIsIt(String bio) {
 		String kind = switch (bio) {
@@ -25,7 +42,7 @@ public class SwitchEx2 {
 
 		System.out.printf("%s는 %s이다.\n", bio, kind);
 
-	}
+	} // end of whoIsIt
 
 	/*
 	 * new switch static void whoIsIt(String bio) { String kind = ""; switch (bio) {
