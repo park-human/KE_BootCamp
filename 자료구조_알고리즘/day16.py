@@ -125,6 +125,23 @@ def count_odd_even():
 
     return odd, even
 
+def count_plus_minus():
+    global head, current
+
+    plus, minus, zero = 0, 0, 0
+
+    current = head
+    while True :
+        if current.data < 0:
+            minus = minus + 1
+        elif current.data > 0:
+            plus = plus + 1
+        else:
+            zero = zero + 1
+        break
+
+    return plus, minus, zero
+
 
 def makeSquareNumber(odd, even):
     if odd > even:
@@ -139,6 +156,14 @@ def makeSquareNumber(odd, even):
         current = current.link
     current.data = current.data * current.data
 
+def makeConversion():
+    current = head
+    while True:
+        current.data = current.data * -1
+        if current.link == head:
+            current.data = current.data * -1
+        break
+
 
 head, current, pre = None, None, None
 data_array = list()
@@ -146,7 +171,7 @@ data_array = list()
 if __name__ == "__main__":
     # odd_even = count_odd_even()  # False 리턴
     for _ in range(7):
-        data_array.append(random.randint(1, 10))
+        data_array.append(random.randint(-100, 100))
 
     node = Node(data_array[0])
     head = node
@@ -158,8 +183,46 @@ if __name__ == "__main__":
         pre.link = node
         node.link = head
 
+    # print_nodes(head)
+    # odd_even = count_odd_even()
+    # print(f'Odd Number : {odd_even[0]}, Even Number {odd_even[1]}')
+    # makeSquareNumber(odd_even[0], odd_even[1])
+    # print_nodes(head)
+
     print_nodes(head)
-    odd_even = count_odd_even()
-    print(f'Odd Number : {odd_even[0]}, Even Number {odd_even[1]}')
-    makeSquareNumber(odd_even[0], odd_even[1])
+    plue_minus_zero = count_plus_minus()
+    print(f'+ : {plue_minus_zero[0]}개, - : {plue_minus_zero[1]}개, 0 : {plue_minus_zero[2]}개')
+    makeConversion()
     print_nodes(head)
+
+
+# stack
+#stack = [None, None, None, None, None]
+stack = [None for _ in range(5)]
+top = -1
+
+top +=1
+stack[top] = "커피"
+top +=1
+stack[top] = "녹차"
+top +=1
+stack[top] = "꿀물"
+
+print("----- 스택 상태 -----")
+for i in range(len(stack)-1, -1, -1):
+		print(stack[i])
+
+print("--------------------")
+data = stack[top]
+stack[top] = None
+top -= 1
+print("pop -->", data)
+
+data = stack[top]
+stack[top] = None
+top -= 1
+print("pop -->", data)
+
+print("----- 스택 상태 -----")
+for i in range(len(stack)-1, -1, -1):
+		print(stack[i])
