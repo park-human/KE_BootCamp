@@ -4,6 +4,7 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.StringTokenizer;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 // IP 165.246.115.165 포트 20000
@@ -42,8 +43,41 @@ public class SimpleEchoServer implements Runnable {
         ) {
             String inputLine;
             while ((inputLine = br.readLine()) != null) {
-                System.out.println("["+ Thread.currentThread() + "]" + " 클라이언트가 보낸 메세지 : " + inputLine);
+                System.out.println(clientSocket.getRemoteSocketAddress().toString() + " " + Thread.currentThread() + " 클라이언트가 보낸 메세지 : " + inputLine);
                 out.println(inputLine);
+                try{
+                    StringTokenizer st = new StringTokenizer(line,"+-*/",true);
+                    int result = 0, operand = 0;
+                    char operator = '+';
+
+                    while(st.hasMoreTokens()){
+                        String token st.nextToken().trim();
+
+                        if("+-*/".indexOf(token) >= 0){
+                            operator = token.charAt(0);
+                        } else{
+                            operand = Integer.parseInt(token);
+
+                            switch(operator){
+                                case '+' :
+                                    result = result + operand;
+                                    break;
+                                case '-' :
+                                    result = result - operand;
+                                    break;
+                                case '*' :
+                                    result = result * operand;
+                                    break;
+                                case '/' :
+                                    result = result / operand;
+                                    break;
+                            }
+                        }
+                    }
+                    pw.println(line + "=" + result);
+                } catch (NumberFormatException){
+                    pw.println("유효하지 않은 입력 값입니다.");
+                }
             }
             System.out.println("[" + Thread.currentThread() +"]"+" 클라이언트가 종료됨");}
         catch (IOException ex)
